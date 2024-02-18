@@ -13,3 +13,7 @@ function correctPolishLetter(str) {
 
     return str.replace(/[ąćęłńńóśźż]/g, match=>polishLetter[match])
 }
+
+
+fdasfdsa
+
