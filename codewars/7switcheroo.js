@@ -1,0 +1,1 @@
+const switcheroo = str => str.replace(/[ab]/g, x=> x === 'a' ? 'b' : 'a' )
