@@ -1,0 +1,3 @@
+function arithmeticSequenceElements(a, r, n) {
+    return Array.from({length: n}, (_, i) => a + r * i).join(', ');
+}
