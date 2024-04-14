@@ -9,4 +9,6 @@ function comp(array1, array2){
 
 function test() {
     console.log('test 1')
+    console.log('test2')
 }
+
