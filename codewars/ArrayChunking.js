@@ -1,12 +1,9 @@
 function chunkArray(array, size) {
-    let result = []
-    for (value of array){
-        let lastArray = result[result.length -1 ]
-        if(!lastArray || lastArray.length == size){
-            result.push([value])
-        } else{
-            lastArray.push(value)
+    function chunkArray(array, size) {
+        if (array.length <= size ) {
+            return [array]
         }
+    
+        return [array.slice(0, size), ...chunkArray(array.slice(size), size)]
     }
-    return result
 }
