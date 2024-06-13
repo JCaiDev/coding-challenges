@@ -7,7 +7,7 @@ const uniqSort = function(arr) {
             results.push(arr[i]);
             cache[arr[i]] = true
         }
-    }
+    } 
     return results.sort((a, b)=> a - b)
 }
 
