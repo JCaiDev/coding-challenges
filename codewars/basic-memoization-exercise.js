@@ -14,7 +14,7 @@ console.log('times10 returns:', times10(9))
 
 const cache = {}
 
-const memoTimes10 = (n) => {
+const memoiTimes10 = (n) => {
     if (n in cache) {
         return cache[n]
     } else {
@@ -48,3 +48,22 @@ const memoizedClosureTimes10 = (n) => {
 
 const closureTimes10 = memoizedClosureTimes10()
 
+
+// Task 4 - making it generic
+
+const memoize = (cb) => {
+    let cache = {}
+    return (...args) => {
+        if (n in cache) {
+            console.log('Fetching from cache:', n)
+            return cache[n]
+        } else {
+            console.log('calculating result')
+            let result = cb(...args)
+            cache[n] = result
+            return result
+        }
+    }
+}
+
+const memoizedTimes10 = memoized(times10)
