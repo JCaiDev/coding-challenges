@@ -6,30 +6,20 @@
 
 // input: 35, output # of coins: 2 (25, 10)
 
-const makeChange = (coins, amount) => {
-    coins.sort((a, b) => b-a)
-    let coinTotal = 0
-    let i = 0
-    while (amount > 0) {
-        if (coins[i] <= amount) {
-            amount -= coins[i]
-            coinTotal++
-        } else {
-            i++
-        }
-    }
-    return coinTotal
-}
+// Brute Force Method / Greedy Method 
 
-// Brute Force Method / Greedy Method
+// add caching
+const coins = [10, 6, 1]
 
-const makeChangeBruteForce = (value) => {
-    if (value === 0) return 0
-    let minCoins
+const makeChange = (c) => {
+    if (cache[c]) return cache[c]
+
+    let minCoins = -1
+    
     coins.forEach(coin => {
-        if (value-coin >= 0) {
-            let currMinCoins = makeChangeBruteForce(value - coin)
-            if (minCoins === undefined || currMinCoins < minCoins) {
+        if (c-coin >= 0) {
+            let currMinCoins = makeChange(c - coin)
+            if (minCoins === -1 || currMinCoins < minCoins) {
                 minCoins = currMinCoins
             }
         } 
