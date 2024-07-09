@@ -11,7 +11,9 @@
 // add caching
 const coins = [10, 6, 1]
 
-const makeChange = (c) => {
+const makeChange = (c, cache = {}) => {
+    if ( c=== 0) return 0
+    
     if (cache[c]) return cache[c]
 
     let minCoins = -1
