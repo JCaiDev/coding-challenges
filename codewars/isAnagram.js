@@ -33,3 +33,30 @@ function isAnagram(stringA, stringB) {
 
     
 }
+
+
+
+function validAnagram(strA, strB) {
+    
+    if (strA.length !== strB.length) return false
+    
+    const lookup = {}
+
+    for (let i = 0; i < strA.length; i++) {
+        let charA = strA[i]
+
+        lookup[charA] ? lookup[charA] +=1 : lookup[charA] = 1
+    }
+
+    for (let i = 0; i < strB.length; i++) {
+        let letter = strB[i]
+
+        if (!lookup[letter]) {
+            return false
+        } else {
+            lookup[letter] -= 1
+        }
+    }
+    return true
+
+}
