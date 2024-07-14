@@ -19,5 +19,5 @@ function binarySearch(list, item) {
 
 }
 
-binarySearch([2,6,7,90,103], 90);
+binarySearch([1, 2, 3, 5, 6, 8, 9 ,12, 16 ,29, 45, 47, 100], 90);
 
