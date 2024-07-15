@@ -1,17 +1,18 @@
-function binarySearch(list, item) {
+function binarySearch(array, val) {
     let left = 0
-    let right = list.length - 1
-    let mid;
+    let right = array.length - 1
+    
 
     while (left <= right) {
-        mid = Math.floor((left + right) / 2)
+        let mid = Math.floor((left + right) / 2)
+        let currentElement = array[mid]
 
-        if (list[mid] === item) {
-            return mid
-        } else if (list[mid] < item ) {
+        if (array[mid] < val) {
             left = mid + 1
-        } else {
+        } else if (array[mid] > val ) {
             right = mid - 1
+        } else {
+            return mid
         }
     }
 
@@ -19,5 +20,6 @@ function binarySearch(list, item) {
 
 }
 
-binarySearch([1, 2, 3, 5, 6, 8, 9 ,12, 16 ,29, 45, 47, 100], 90);
+binarySearch([1, 2, 3, 5, 6, 8, 9 ,12, 16 ,29, 45, 47, 100], 47);
 
+// 11
