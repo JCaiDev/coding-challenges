@@ -21,4 +21,4 @@ function binarySearchTS(arr: number[], elem: number): number {
   return arr[mid] === elem ? mid : -1;
 }
 
-console.log(binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 15));
+console.log(binarySearchTS([2, 5, 6, 9, 13, 15, 28, 30], 15));
