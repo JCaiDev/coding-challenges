@@ -29,6 +29,6 @@ function merge(arr1, arr2) {
   return results;
 }
 
-merge([1, 10, 50], [2, 14, 99, 100]);
+merge([1, 10, 11, 14, 45, 78, 95, 100], [2, 14, 99, 100]);
 
 console.log(test1); // [1, 2, 10, 14, 50, 99, 100];
