@@ -37,3 +37,14 @@ console.log(test1); // [1, 2, 10, 11, 14, 45, 78, 95, 99, 100, 100];
 // Break up the array into halves until you have arrays that are empty or have one element
 // Merge the smaller sorted arrays, merge those arrays with other sorted arrays until you have the full length of the array
 // Once the array has been merged back together, return the merged and sorted array!
+
+function mergeSort(arr) {
+  // recursion base case
+  if (arr.length <= 1) return arr;
+
+  // break up array into 2 arrays
+  let midpoint = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, midpoint));
+  let right = mergeSort(arr.slice(midpoint));
+  return merge(left, right);
+}
