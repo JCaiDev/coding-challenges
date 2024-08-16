@@ -1,5 +1,5 @@
-//create an empty array, take a look at the smallest values in each input array
-//while there are still values we havent looked at
+// create an empty array, take a look at the smallest values in each input array
+// while there are still values we havent looked at
 // if the value in the first array is smaller than the value in the second array, push the value in the first array into our results and move on to the next value in the first array
 // if the value in the first array is larger than the value in the second array, push the value in the second array into our results and move on to the next value in the second array
 // once we exhaust one array, push in all remaining values from the other array
@@ -29,6 +29,11 @@ function merge(arr1, arr2) {
   return results;
 }
 
-merge([1, 10, 11, 14, 45, 78, 95, 100], [2, 14, 99, 100]);
+const test1 = merge([1, 10, 11, 14, 45, 78, 95, 100], [2, 14, 99, 100]);
 
-console.log(test1); // [1, 2, 10, 14, 50, 99, 100];
+console.log(test1); // [1, 2, 10, 11, 14, 45, 78, 95, 99, 100, 100];
+
+// Part 1:
+// Break up the array into halves until you have arrays that are empty or have one element
+// Merge the smaller sorted arrays, merge those arrays with other sorted arrays until you have the full length of the array
+// Once the array has been merged back together, return the merged and sorted array!
