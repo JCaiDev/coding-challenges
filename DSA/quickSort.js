@@ -33,7 +33,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {
       swapIdx++;
       swap(arr, swapIdx, i);
       console.log(
-        `swap numbers: swapIdx = ${swapIdx} ${arr[swapIdx]} & ${arr[i]}`
+        `swapIdx = ${swapIdx} swap numbers: ${arr[swapIdx]} & ${arr[i]}`
       );
     }
   }
@@ -41,4 +41,27 @@ function pivot(arr, start = 0, end = arr.length - 1) {
   return swapIdx;
 }
 
-// swapIdx = 3
+// quickSort Pseudo
+// call the pivot helper on the array
+// When the helper returns to you the updated pivot index, recursively call the pivot helper on the subarray to the left and to the right of that index
+// Base case occurs when a subarray with less than 2 elements
+
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right); //3
+    //left
+    quickSort(arr, left, pivotIndex - 1);
+    //right
+    quickSort(arr, pivotIndex + 1, right);
+  }
+
+  return arr;
+}
+
+// [4, 6, 9, 1, 2, 5, 3] swapIdx = 3
+// [3, 1, 2, 4, 9, 5, 6]
+//           4
+// 3, 2, 1
+// 1, 2, 3 si = 2
+// 1        si = 0
+//    2 si = 1
