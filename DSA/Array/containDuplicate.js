@@ -6,10 +6,13 @@ class Solution {
    * Edge cases empty arrays [], negatives, different types, [1, "1"]
    */
   hasDuplicates(nums) {
-    const numsSet = new Set();
+    const numSet = new Set();
+
     for (const num of nums) {
-      if (numsSet.has(num)) return true;
+      if (numSet.has(num)) return true;
+      numSet.add(num);
     }
+
     return false;
   }
 }
