@@ -16,3 +16,16 @@ class Solution {
     return false;
   }
 }
+
+function containDuplicate(nums) {
+  let hashtable = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] in hashtable) {
+      return true;
+    } else {
+      hashtable[nums[i]] = 1;
+    }
+    return false;
+  }
+}
