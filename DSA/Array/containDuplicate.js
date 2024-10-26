@@ -18,14 +18,12 @@ class Solution {
 }
 
 function containDuplicate(nums) {
-  let hashtable = {};
-
+  let hashMap = {};
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] in hashtable) {
+    if (nums[i] in hashMap) {
       return true;
     } else {
-      hashtable[nums[i]] = 1;
+      hashMap[nums[i]] = 1;
     }
-    return false;
   }
 }
