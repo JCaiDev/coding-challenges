@@ -104,4 +104,30 @@ class Solution {
 
 // chatGPT Solution
 
-function checkPerm(s1, s2) {}
+function checkPerm(s1, s2) {
+  if (s1.length > s2.length) return false;
+
+  const s1Count = new Array(26).fill(0);
+
+  for (let i = 0; i < s1.length; i++) {
+    s1Count[s1.charCodeAt(i) - 97]++;
+  }
+
+  let l = 0;
+  let matches = s1.length;
+
+  for (let r = 0; r < s2.length; r++) {
+    const rightCharIndex = s2.charCodeAt(r) - 97;
+    if (s1Count[rightCharIndex] > 0) matches--;
+    s1Count[rightCharIndex]--;
+
+    if (r - l + 1 > s1.length) {
+      const leftCharIndex = s2.charCodeAt(l) - 97;
+      if (s1Count[leftCharIndex] >= 0) matches++;
+      s1Count[leftCharIndex]++;
+      l++;
+    }
+    if (matches === 0) return true;
+  }
+  return false;
+}
