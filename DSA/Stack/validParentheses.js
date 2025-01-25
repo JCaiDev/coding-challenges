@@ -11,7 +11,7 @@ class Solution {
       if (char === "(" || char === "{" || char === "[") {
         stack.push(char);
       } else {
-        if (stack.pop() !== closeToOpen[char]) {
+        if (stack.pop()! !== closeToOpen[char]) {
           return false;
         }
       }
