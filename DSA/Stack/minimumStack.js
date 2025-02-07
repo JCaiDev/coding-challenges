@@ -12,8 +12,8 @@ class MinStack {
     this.minStack.push(val);
   }
   pop() {
-    this.stack.pop()!;
-    this.minstack.pop()!;
+    this.stack.pop();
+    this.minstack.pop();
   }
   top() {
     return this.stack[this.stack.length - 1];
