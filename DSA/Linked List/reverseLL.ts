@@ -1,8 +1,8 @@
 class ListNode {
   val: number;
-  next: ListNode | null;
+  next: ListNode | null = null;
 
-  constructor(val?: number, next?: ListNode | null) {
+  constructor(val: number = 0, next: ListNode | null = null) {
     this.val = val ?? 0;
     this.next = next ?? null;
   }
