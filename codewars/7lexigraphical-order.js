@@ -1,1 +1,0 @@
-sortme = names => names.sort()

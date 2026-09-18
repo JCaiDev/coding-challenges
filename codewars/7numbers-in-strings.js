@@ -1,1 +1,0 @@
-maxNum = string => Math.max(...string.match(/\d+|$/g)) 
